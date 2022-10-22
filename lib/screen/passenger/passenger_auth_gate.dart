@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/auth.dart';
 import 'package:vehicle_match/screen/passenger/passenger_home.dart';
-import 'package:vehicle_match/screen/vehicle_owner/vehicle_home.dart';
 
 class PassengerAuthGate extends StatelessWidget {
   const PassengerAuthGate({Key? key}) : super(key: key);

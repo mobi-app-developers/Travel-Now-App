@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:vehicle_match/screen/passenger/search_page.dart';
 import 'package:vehicle_match/widgets/list_button.dart';
+import 'package:vehicle_match/select_user.dart';
 import 'package:vehicle_match/widgets/rounded_input.dart';
 
 class PassengerHome extends StatefulWidget {
@@ -69,7 +70,7 @@ class _PassengerHomeState extends State<PassengerHome> {
                 height: 150,
                 child: RoundedInput(
                   label: "Search ",
-                  hint: "Search",
+                  hint: "Search by Destination",
                   icon: Icons.search,
                   readOnly: true,
                   ontap: () {

@@ -36,21 +36,6 @@ class ChatMessages {
        idTo: idTo,
        timestamp: timestamp,
        content: content,
-       type: type); 
+       type: type);
  }
-}
-
-StatefulBuilder(
-  builder: (BuildContext context, setState) {
-    return ;
-  },
-),
-
-class name extends StatelessWidget {
-  const name({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
 }

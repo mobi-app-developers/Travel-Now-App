@@ -124,7 +124,7 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('${widget.peerEmail}'.trim()),
+        title: Text(widget.peerEmail.trim()),
       ),
       body: SafeArea(
         child: Padding(
@@ -306,7 +306,7 @@ class _ChatPageState extends State<ChatPage> {
     return Flexible(
       child: groupChatId.isNotEmpty
           ? StreamBuilder<QuerySnapshot>(
-              stream: chatsHandler.getChatMessage(groupChatId, _limit),
+              stream: chatsHandler.getChatMessage(_limit),
               builder: (BuildContext context,
                   AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (snapshot.hasData) {

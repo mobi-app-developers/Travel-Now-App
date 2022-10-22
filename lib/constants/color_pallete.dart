@@ -46,53 +46,14 @@ const orange = Color(0xFFFFC8A2);
 const sky = Color(0xFFABDEE6);
 const blue = Color(0xFF509BE4);
 
-const listColors = [
-  green,
-  primary,
-  pink,
-  red,
-  yellow,
-  orange,
-  sky,
-  blue,
-  purple,
-  yellow,
-];
+const listColors = [green, primary, pink, red, yellow, orange, sky, blue, purple, yellow,];
 
-const Color spaceLight = Color(0xff2b3a67);
-const Color orangeWeb = Color(0xFFf59400);
-const Color white = Color(0xFFf5f5f5);
-const Color greyColor = Color(0xffaeaeae);
-const Color greyColor2 = Color(0xffE8E8E8);
-const Color lightGrey = Color(0xff928a8a);
-const Color burgundy = Color(0xFF880d1e);
-const Color indyBlue = Color(0xFF414361);
-const Color spaceCadet = Color(0xFF2a2d43);
-
-class name extends StatefulWidget {
-  const name({super.key});
-
-  @override
-  State<name> createState() => _nameState();
-}
-
-class _nameState extends State<name> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-class name extends StatefulWidget {
-  const name({super.key});
-
-  @override
-  State<name> createState() => _nameState();
-}
-
-class _nameState extends State<name> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
+   const Color spaceLight = Color(0xff2b3a67);
+   const Color orangeWeb = Color(0xFFf59400);
+   const Color white = Color(0xFFf5f5f5);
+   const Color greyColor = Color(0xffaeaeae);
+   const Color greyColor2 = Color(0xffE8E8E8);
+   const Color lightGrey = Color(0xff928a8a);
+   const Color burgundy = Color(0xFF880d1e);
+   const Color indyBlue = Color(0xFF414361);
+   const Color spaceCadet = Color(0xFF2a2d43);
