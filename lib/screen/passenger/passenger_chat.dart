@@ -3,11 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-
+import 'package:vehicle_match/constants/color_pallete.dart';
 import 'package:vehicle_match/models/chat_messages.dart';
 import 'package:vehicle_match/widgets/chat_widgets.dart';
 
-
+import '../../controllers/chats_controller.dart';
 
 class ChatPage extends StatefulWidget {
   final String peerId;
