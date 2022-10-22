@@ -5,12 +5,15 @@ import 'package:vehicle_match/models/chat_messages.dart';
 final chatsHandler = Get.put(ChatsController());
 
 class ChatsController extends GetxController {
+  // array holding the vehicle ownwer chats
+  List<ChatMessages> vehicleChats = [];
+
 // To get a stream of chat messages from the Firestore database while users chat with each other:
-  Stream<QuerySnapshot> getChatMessage(String groupChatId, int limit) {
+  Stream<QuerySnapshot> getChatMessage(int limit) {
     return FirebaseFirestore.instance
         .collection("messages")
-        .doc(groupChatId)
-        .collection(groupChatId)
+        // .doc(groupChatId)
+        // .collection(groupChatId)
         .orderBy("timestamp", descending: true)
         .limit(limit)
         .snapshots();
@@ -19,11 +22,8 @@ class ChatsController extends GetxController {
 // To send messages to other users with the help of the Firestore database and save those messages inside it:
   void sendChatMessage(String content, int type, String groupChatId,
       String currentUserId, String peerId) {
-    DocumentReference documentReference = FirebaseFirestore.instance
-        .collection("messages")
-        .doc(groupChatId)
-        .collection(groupChatId)
-        .doc(DateTime.now().millisecondsSinceEpoch.toString());
+    DocumentReference documentReference =
+        FirebaseFirestore.instance.collection("messages").doc(groupChatId);
     ChatMessages chatMessages = ChatMessages(
         idFrom: currentUserId,
         idTo: peerId,
@@ -38,8 +38,25 @@ class ChatsController extends GetxController {
   }
 
   // chats functionality of vehicle Owner
-  Stream<QuerySnapshot> getVehicleOwnerMessage() {
-    return FirebaseFirestore.instance.collection("messages").snapshots();
+  getVehicleOwnerMessage() async {
+    await FirebaseFirestore.instance
+        .collection("messages")
+        .get()
+        .then((snapshot) {
+      for (var doc in snapshot.docs) {
+        if (vehicleChats.isEmpty) {
+          vehicleChats.add(ChatMessages(
+              idFrom: doc["idFrom"],
+              idTo: doc["idTo"],
+              timestamp: doc["timestamp"],
+              content: doc["content"],
+              type: doc["type"]));
+              update();
+        } else {
+          return;
+        }
+      }
+    });
   }
 }
 
