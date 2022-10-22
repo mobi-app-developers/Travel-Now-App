@@ -92,7 +92,7 @@ class _VehicleOwnerHomeState extends State<VehicleOwnerHome> {
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data =
                   document.data()! as Map<String, dynamic>;
-              return data['vehicleUserId'] ==
+              return data['vehicleUserId'].toString() ==
                       FirebaseAuth.instance.currentUser!.uid
                   ? Card(
                       elevation: 200,
@@ -137,7 +137,9 @@ class _VehicleOwnerHomeState extends State<VehicleOwnerHome> {
                     )
                   : const Center(
                       child: Text(
-                      "You haven't posted any vehicle details",
+                      "",
+                      // You haven't posted any vehicle details
+                      // ",
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
