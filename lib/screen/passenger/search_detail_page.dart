@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vehicle_match/models/vehicle_content.dart';
 import 'package:vehicle_match/screen/passenger/passenger_chat.dart';
-
+import 'package:vehicle_match/widgets/search_tile.dart';
 
 class SearchDetail extends StatefulWidget {
   final List<VehicleContents> searchResult;
